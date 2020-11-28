@@ -1,7 +1,9 @@
-
 const interactiveMap = require('./Map')
+const dom = require('./dom')
 function OnMapClick (e) {
-  console.log('onMapClick');
+  const coords = e.get('coords');
+
+  interactiveMap.openBalloon(coords);
 }
 
 function OnGeoObjectsClick (e) {
@@ -11,6 +13,8 @@ function OnGeoObjectsClick (e) {
 
   if(!geoObjects) {
     interactiveMap.openBalloon(coords);
+  } else {
+    interactiveMap.openClusterer(target)
   }
 
   console.log('OnGeoObjectsClick');

@@ -1,4 +1,12 @@
 const api = require('./API.js')
+
+const placemarkIcon = {
+  iconLayout: "default#image",
+  // iconImageHref: "img/sprites.png",
+  iconImageHref: "img/marker.png",
+  iconImageSize: [22, 33],
+  iconImageOffset: [-11, -33],
+};
 function geoLocation () {
   return new Promise(function (resolve) {
     ymaps.geolocation.get({provider: 'auto'})
@@ -25,9 +33,9 @@ async function openBalloon (coords) {
 function clusterer () {
   ymaps.clusterer = new ymaps.Clusterer({
     clusterDisableClickZoom: true,
-    clusterOpenBalloonOnClick: true,
+    clusterOpenBalloonOnClick: false,
     clusterBalloonContentLayout: 'cluster#balloonCarousel',
-    // clusterBalloonItemContentLayout: 'my#clustererItemLayout',
+    clusterBalloonItemContentLayout: 'my#clustererItemLayout',
   });
 
 
@@ -38,7 +46,7 @@ function createPlacemarks (placemarks = {}) {
     const coords = placemark.split(",");
     const data = placemarks[placemark];
 
-    ymaps.clusterer.add(new ymaps.Placemark(coords, data))
+    ymaps.clusterer.add(new ymaps.Placemark(coords, data,placemarkIcon))
   }
 }
 function geoCoder (coords) {
@@ -49,11 +57,30 @@ function geoCoder (coords) {
     });
   })
 }
+async function openClusterer (target) {
+  const coords = target.geometry.getCoordinates();
+
+  ymaps.map.balloon.open(coords, 'Загрузка...', { closeButton: false });
+
+  const geoObjects = target.getGeoObjects();
+
+  for (const geoObject of geoObjects) {
+    const coords = geoObject.geometry.getCoordinates();
+    const comments = await api.getPlacmark(coords);
+    const address = await geoCoder(coords);
+
+    geoObject.properties.set("comments", comments).set("address", address).set("coords", coords);
+  }
+
+  ymaps.map.balloon.close(coords);
+  ymaps.clusterer.balloon.open(target);
+}
 
 module.exports = {
   geoLocation,
   openBalloon,
   clusterer,
   createPlacemarks,
-  geoCoder
+  geoCoder,
+  openClusterer
 }

@@ -6,9 +6,13 @@ const API = require('./js/API')
 ymaps.ready(async () => {
   console.log('Yandex map ready');
   const customBalloonTemplate = document.getElementById('customBalloonTemplate').innerHTML;
+  const customClustererItemLayout = document.getElementById('customClustererItemLayout').innerHTML;
   const balloonTemplate = ymaps.templateLayoutFactory.createClass(customBalloonTemplate);
 
+  const clustererItemLayout = ymaps.templateLayoutFactory.createClass(customClustererItemLayout);
+
   ymaps.layout.storage.add('my#customBalloonLayout',balloonTemplate);
+  ymaps.layout.storage.add('my#clustererItemLayout',clustererItemLayout);
 
   try {
     const coords = await interactiveMap.geoLocation()

@@ -8,6 +8,17 @@
   </head>
   <body>
     <div id="map">Определяем Ваши координаты....</div>
+    <script type="text/html" id="customClustererItemLayout">
+      <a href='#' style="display: block; margin-bottom: 20px;" data-role="clusterer-link" data-coords="{{ geoObject.properties.coords }}">
+        {{ properties.address|raw }}
+      </a>
+      {% for comment in properties.comments %}
+      <div>
+        <strong>{{ comment.name }}</strong>
+        <span>{{ comment.place }}</span>
+      </div>
+      {% endfor %}
+    </script>
     <script  type="text/html" id="customBalloonTemplate">
       <div class="popover">
         <div class="arrow" style="position: absolute; left: 50%; transform: translateX(-50%); width: 40px;bottom: 0; height: 40px;"></div>

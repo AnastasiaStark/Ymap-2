@@ -16,7 +16,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43e9c7b5-06a8-47ba-977c-6e48e735b357" name="Default Changelist" comment="" />
+    <list default="true" id="43e9c7b5-06a8-47ba-977c-6e48e735b357" name="Default Changelist" comment="new NPM">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +106,7 @@
       <workItem from="1606155551975" duration="10000" />
       <workItem from="1606155631854" duration="8539000" />
       <workItem from="1606409967616" duration="1883000" />
-      <workItem from="1606412001399" duration="12629000" />
+      <workItem from="1606412001399" duration="22202000" />
     </task>
     <task id="LOCAL-00001" summary="new NPM">
       <created>1606554880632</created>
@@ -109,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606554880633</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new NPM">
+      <created>1606555220451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606555220451</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,9 +184,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606548438970" />
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606554968117">
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2" timestamp="1606555262135">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606554968117" />
+    <state x="275" y="78" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1606555262135" />
   </component>
 </project>
